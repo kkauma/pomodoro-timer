@@ -1,3 +1,22 @@
+/* Add theme variables */
+:root[data-theme="light"] {
+  --bg-gradient-from: #e0eafc;
+  --bg-gradient-to: #cfdef3;
+  --text-color: #1a1a1a;
+  --timer-bg: rgba(0, 0, 0, 0.1);
+  --circle-bg: rgba(0, 0, 0, 0.1);
+  --circle-fg: #1a1a1a;
+}
+
+:root[data-theme="dark"] {
+  --bg-gradient-from: #667eea;
+  --bg-gradient-to: #764ba2;
+  --text-color: white;
+  --timer-bg: rgba(255, 255, 255, 0.1);
+  --circle-bg: rgba(255, 255, 255, 0.1);
+  --circle-fg: white;
+}
+
 body {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   min-height: 100vh;
@@ -5,10 +24,15 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: linear-gradient(
+    135deg,
+    var(--bg-gradient-from) 0%,
+    var(--bg-gradient-to) 100%
+  );
+  color: var(--text-color);
   margin: 0;
   padding: 20px;
+  transition: all 0.3s ease;
 }
 
 h1 {
@@ -18,15 +42,50 @@ h1 {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+.timer-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-ring {
+  position: absolute;
+  transform: rotate(-90deg);
+  width: 100%;
+  height: 100%;
+}
+
+.progress-ring__circle-bg {
+  fill: none;
+  stroke: var(--circle-bg);
+}
+
+.progress-ring__circle {
+  fill: none;
+  stroke: var(--circle-fg);
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.3s;
+}
+
 .timer {
-  font-size: 6rem;
+  position: relative;
+  z-index: 1;
+  font-size: 3.5rem;
   font-weight: 700;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 2rem 3rem;
+  background: var(--timer-bg);
+  padding: 1.5rem 2rem;
   border-radius: 20px;
   margin: 2rem 0;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
+  width: 160px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  font-family: "Inter", monospace;
+  color: var(--text-color);
 }
 
 .controls {
@@ -43,7 +102,7 @@ h1 {
   border-radius: 12px;
   cursor: pointer;
   border: none;
-  color: white;
+  color: var(--text-color);
   opacity: 0.9;
   transition: all 0.3s ease;
   text-transform: uppercase;
@@ -92,4 +151,29 @@ h1 {
   .controls {
     grid-template-columns: 1fr;
   }
+}
+
+/* Add theme toggle button styles */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--timer-bg);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
 }

@@ -11,8 +11,29 @@
     />
   </head>
   <body>
+    <button id="theme-toggle" class="theme-toggle">
+      <span class="theme-toggle-icon">🌙</span>
+    </button>
     <h1>Pomodoro Timer</h1>
-    <div class="timer" id="timer">25:00</div>
+    <div class="timer-container">
+      <svg class="progress-ring" width="300" height="300">
+        <circle
+          class="progress-ring__circle-bg"
+          cx="150"
+          cy="150"
+          r="140"
+          stroke-width="8"
+        />
+        <circle
+          class="progress-ring__circle"
+          cx="150"
+          cy="150"
+          r="140"
+          stroke-width="8"
+        />
+      </svg>
+      <div class="timer" id="timer">25:00</div>
+    </div>
     <div class="controls">
       <button class="start-btn" onclick="startTimer()">Start</button>
       <button class="pause-btn" onclick="pauseTimer()">Pause</button>
