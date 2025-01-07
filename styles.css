@@ -1,0 +1,95 @@
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.timer {
+  font-size: 6rem;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem 3rem;
+  border-radius: 20px;
+  margin: 2rem 0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin: 2rem 0;
+}
+
+.controls button {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  cursor: pointer;
+  border: none;
+  color: white;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.controls button:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.start-btn {
+  background-color: #4ade80;
+}
+
+.pause-btn {
+  background-color: #fbbf24;
+}
+
+.reset-btn {
+  background-color: #f87171;
+}
+
+.toggle-btn {
+  background-color: #60a5fa;
+}
+
+.status {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+@media (max-width: 600px) {
+  .timer {
+    font-size: 4rem;
+    padding: 1.5rem 2rem;
+  }
+
+  .controls {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1>Pomodoro Timer</h1>
+    <div class="timer" id="timer">25:00</div>
+    <div class="controls">
+      <button class="start-btn" onclick="startTimer()">Start</button>
+      <button class="pause-btn" onclick="pauseTimer()">Pause</button>
+      <button class="reset-btn" onclick="resetTimer()">Reset</button>
+      <button class="toggle-btn" onclick="toggleMode()">Toggle Mode</button>
+    </div>
+    <div class="status" id="status">Work Time!</div>
+    <script src="script.js"></script>
+  </body>
+</html>
