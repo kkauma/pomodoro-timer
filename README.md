@@ -2,6 +2,8 @@
 
 A simple Pomodoro Timer built with HTML, CSS, and JavaScript that helps you boost productivity using the Pomodoro Technique. This timer alternates between focused work sessions and breaks to help maintain concentration and prevent mental fatigue.
 
+[Try the Live Demo](https://pomodoro-timer-blue-seven.vercel.app/)
+
 ## Features
 
 - 25-minute work sessions (Pomodoros)
@@ -11,4 +13,4 @@ A simple Pomodoro Timer built with HTML, CSS, and JavaScript that helps you boos
 - Pause and reset functionality
 - Clean, minimalist interface
 
-[Try the Live Demo](https://pomodoro-timer-blue-seven.vercel.app/)
+
